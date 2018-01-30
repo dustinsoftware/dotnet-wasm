@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf8" />
+    </head>
+    <style>
+body {
+    background: #FFFFFF;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #212121;
+}
+
+button {
+    padding: 4px 16px;
+    background: #388E3C;
+    border: 0;
+    color: #FFFFFF;
+    transition: background 0.1s ease;
+}
+
+button:hover {
+    background: #4CAF50;
+}
+
+h1 {
+    text-shadow: #BDBDBD 0px 2px 2px;
+}
+
+
+    </style>
+    <body>
+        <h1>Dustin's Mono WebAssembly Test</h1>
+        <span>Todo list demo: <input class="input1" style="width: 200px;" /></span>
+        <button class="btn-add">Add</button>
+        <div id="output"></div>
+        <script src="./index.js"></script>
+        <script>
+const dump = (str) => document.getElementById('output').innerText = str;
+const invokeMethod = (name, params) => MonoInvoke(0, MonoMethod(MonoClass('', 'Program'), name), params || []);
+
+dump('Started loading');
+
+document.querySelector('.btn-add').addEventListener('click', () => {
+    invokeMethod('AddToList', [document.querySelector('.input1').value])
+});
+        </script>
+    </body>
+</html>
