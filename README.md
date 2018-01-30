@@ -1,6 +1,6 @@
 # .NET WebAssembly Test
 
-### [Demo here](https://dustinsoftware.github.io/dotnet-wasm/)
+### [Demo here](https://dustinsoftware.github.io/dotnet-wasm/index.html)
 
 ### What is this thing?
 
